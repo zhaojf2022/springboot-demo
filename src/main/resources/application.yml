@@ -1,0 +1,33 @@
+
+fabricefo:
+  openapi:
+    dev-url: http://localhost:8999
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    url: jdbc:h2:mem:demo
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true
+springdoc:
+  api-docs:
+    path: /fabricefo-api-docs
+  packages-to-scan: com.fabricefo.demo.controller
+  swagger-ui:
+    filter: true
+    operationsSorter: method
+    path: /fabricefo-documentation
+    tagsSorter: alpha
+    tryItOutEnabled: true
+server:
+  port: 8999
